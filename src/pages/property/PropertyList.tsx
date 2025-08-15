@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useDeleteProperty, useProperties } from "../../api/property";
+import { Link, useNavigate } from 'react-router-dom';
+import { useDeleteProperty, useProperties } from '../../api/property';
 export default function PropertyList() {
   const { data, isLoading } = useProperties();
   const del = useDeleteProperty();

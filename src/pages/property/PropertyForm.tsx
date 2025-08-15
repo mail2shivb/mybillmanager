@@ -1,11 +1,11 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   useCreateProperty,
   useProperty,
   useUpdateProperty,
-} from "../../api/property";
-import { useEffect, useState } from "react";
-import type { Property } from "../../types";
+} from '../../api/property';
+import { useEffect, useState } from 'react';
+import type { Property } from '../../types';
 
 export default function PropertyForm() {
   const { id } = useParams();
@@ -15,9 +15,9 @@ export default function PropertyForm() {
   const updateMut = useUpdateProperty(Number(id));
   const nav = useNavigate();
   const [form, setForm] = useState<Property>({
-    name: "",
-    propType: "Home",
-    address: "",
+    name: '',
+    propType: 'Home',
+    address: '',
   });
   useEffect(() => {
     if (data) setForm(data);
@@ -26,11 +26,11 @@ export default function PropertyForm() {
     e.preventDefault();
     if (editing) await updateMut.mutateAsync(form);
     else await createMut.mutateAsync(form);
-    nav("/");
+    nav('/');
   };
   return (
     <form onSubmit={onSubmit} className="card p-3">
-      <h4>{editing ? "Edit Property" : "New Property"}</h4>
+      <h4>{editing ? 'Edit Property' : 'New Property'}</h4>
       <div className="mb-3">
         <label className="form-label">PropertyName</label>
         <input
