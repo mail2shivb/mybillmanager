@@ -7,6 +7,7 @@ import { store } from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropertyList from './pages/property/PropertyList';
 import PropertyForm from './pages/property/PropertyForm';
+import ApiStatus from './components/ApiStatus';
 
 const qc = new QueryClient();
 function App() {
@@ -27,6 +28,7 @@ function App() {
         </div>
       </nav>
       <div className="container my-4">
+        <ApiStatus />
         <Routes>
           <Route path="/" element={<PropertyList />} />
           <Route path="/properties/new" element={<PropertyForm />} />
