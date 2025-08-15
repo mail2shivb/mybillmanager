@@ -10,7 +10,7 @@ import type { Property } from '../../types';
 export default function PropertyForm() {
   const { id } = useParams();
   const editing = !!id;
-  const { data } = useProperty(id);
+  const { data, isLoading } = useProperty(id);
   const createMut = useCreateProperty();
   const updateMut = useUpdateProperty(Number(id));
   const nav = useNavigate();
@@ -19,15 +19,38 @@ export default function PropertyForm() {
     propType: 'Home',
     address: '',
   });
+
   useEffect(() => {
-    if (data) setForm(data);
+    if (data) {
+      console.log('Loading property data:', data);
+      setForm(data);
+    }
   }, [data]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('PropertyForm - ID:', id, 'Editing:', editing, 'Data:', data);
+  }, [id, editing, data]);
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (editing) await updateMut.mutateAsync(form);
-    else await createMut.mutateAsync(form);
-    nav('/');
+    try {
+      if (editing) {
+        await updateMut.mutateAsync(form);
+      } else {
+        await createMut.mutateAsync(form);
+      }
+      nav('/');
+    } catch (error) {
+      console.error('Error saving property:', error);
+      alert('Error saving property. Please try again.');
+    }
   };
+
+  if (editing && isLoading) {
+    return <div className="card p-3">Loading property...</div>;
+  }
+
   return (
     <form onSubmit={onSubmit} className="card p-3">
       <h4>{editing ? 'Edit Property' : 'New Property'}</h4>
