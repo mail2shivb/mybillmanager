@@ -40,7 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={qc}>
-        <BrowserRouter>
+        <BrowserRouter basename="/mybillmanager">
           <App />
         </BrowserRouter>
       </QueryClientProvider>
