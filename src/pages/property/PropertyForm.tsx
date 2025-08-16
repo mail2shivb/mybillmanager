@@ -22,15 +22,9 @@ export default function PropertyForm() {
 
   useEffect(() => {
     if (data) {
-      console.log('Loading property data:', data);
       setForm(data);
     }
   }, [data]);
-
-  // Debug logging
-  useEffect(() => {
-    console.log('PropertyForm - ID:', id, 'Editing:', editing, 'Data:', data);
-  }, [id, editing, data]);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

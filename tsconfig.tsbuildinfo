@@ -1,1 +1,1 @@
-{"root":["./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/api/apihandler.ts","./src/api/client.ts","./src/api/mockdata.ts","./src/api/property.ts","./src/components/apistatus.tsx","./src/pages/property/propertyform.tsx","./src/pages/property/propertylist.tsx","./src/store/index.ts"],"version":"5.9.2"}
+{"root":["./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/api/client.ts","./src/api/property.ts","./src/pages/property/propertyform.tsx","./src/pages/property/propertylist.tsx","./src/store/index.ts"],"version":"5.9.2"}
