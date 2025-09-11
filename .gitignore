@@ -33,3 +33,16 @@ dist-ssr
 
 # Maven frontend plugin generated files
 node/
+
+# Maven build artifacts
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
