@@ -1,1 +1,0 @@
-{"root":["./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/api/client.ts","./src/api/property.ts","./src/pages/property/PropertyForm.tsx","./src/pages/property/PropertyList.tsx","./src/store/index.ts"],"version":"5.9.2"}
